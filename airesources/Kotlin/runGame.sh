@@ -1,5 +1,4 @@
 #!/bin/bash
 
-kotlinc MyBot.kt
-kotlinc RandomBot.kt
+kotlinc *.kt
 ./halite -d "30 30" "kotlin MyBot" "kotlin RandomBot"
