@@ -4,7 +4,7 @@ object RandomBot {
     @Throws(java.io.IOException::class)
     @JvmStatic fun main(args: Array<String>) {
 
-        val iPackage = Networking.initialize()
+        val iPackage = Networking.buildInitPackage()
         val myID = iPackage.myID
         val gameMap = iPackage.map
 

@@ -1,10 +1,10 @@
 import java.util.ArrayList
 
-object MyBot {
+object MyBot : Logger {
     @Throws(java.io.IOException::class)
     @JvmStatic fun main(args: Array<String>) {
 
-        val iPackage = Networking.initialize()
+        val iPackage = Networking.buildInitPackage()
         val myID = iPackage.myID
         val gameMap = iPackage.map
 
@@ -26,5 +26,6 @@ object MyBot {
             }
             Networking.sendFrame(moves)
         }
+        Logger.close()
     }
 }
