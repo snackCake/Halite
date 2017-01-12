@@ -200,7 +200,7 @@ FakesAssemblies/
 
 #IntelliJ IDEA
 *.iml
-**/.idea/
+.idea/
 
 #Kotlin
 airesources/Kotlin/lib/
