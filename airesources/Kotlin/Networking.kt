@@ -80,32 +80,35 @@ object Networking {
 
     internal fun readNextLine(): String? {
         try {
-            return BufferedReader(InputStreamReader(System.`in`)).readLine()
+            return inputReader.readLine()
         } catch (e: Exception) {
             System.exit(1)
             return null
         }
     }
 
-    internal fun initialize(): InitPackage {
+    private val inputReader by lazy { BufferedReader(InputStreamReader(System.`in`)) }
 
-            val initPackage = InitPackage()
-            initPackage.myID = Integer.parseInt(readNextLine()!!)
-            val inputStringComponents = readNextLine()!!.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+    internal fun buildInitPackage(): InitPackage {
 
-            val width = Integer.parseInt(inputStringComponents[0])
-            val height = Integer.parseInt(inputStringComponents[1])
+        val initPackage = InitPackage()
+        initPackage.myID = Integer.parseInt(readNextLine()!!)
 
-            val productionsLine = readNextLine()
-            val productions = if (productionsLine != null) deserializeProductions(productionsLine, width, height) else emptyArray()
+        val compsLine = readNextLine()
+        val inputStringComponents = compsLine!!.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        val width = Integer.parseInt(inputStringComponents[0])
+        val height = Integer.parseInt(inputStringComponents[1])
 
-            val map = GameMap(width, height, productions)
-            deserializeGameMap(readNextLine(), map)
+        val productionsLine = readNextLine()
+        val productions = if (productionsLine != null) deserializeProductions(productionsLine, width, height) else emptyArray()
 
-            initPackage.map = map
+        val map = GameMap(width, height, productions)
+        deserializeGameMap(readNextLine(), map)
 
-            return initPackage
-        }
+        initPackage.map = map
+
+        return initPackage
+    }
 
     internal fun sendInit(name: String) {
         sendString(name)
