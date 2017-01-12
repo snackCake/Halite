@@ -41,6 +41,7 @@
                             <li>C# - .cs</li>
                             <li>Rust - .toml (for your Cargo.toml) and .rs (for your Rust source)</li>
                             <li>Scala - .scala</li>
+                            <li>Kotlin - .kt</li>
                             <li>Ruby - .rb</li>
                             <li>Go - .go</li>
                             <li>PHP - .php</li>
@@ -59,6 +60,7 @@
                             <li>C# - mcs 4.6.1.0</li>
                             <li>Rust - rustc 1.10.0</li>
                             <li>Scala - scalac 2.10.4</li>
+                            <li>Kotlin - kotlinc 1.0.6</li>
                             <li>C - gcc 4.8</li>
                         </ul>
                     </p>
@@ -80,6 +82,7 @@
                             <li>C# 6.0</li>
                             <li>Rust 1.10</li>
                             <li>Scala 2.10.4</li>
+                            <li>Kotlin 1.0.6</li>
                             <li>Ruby 2.3.1</li>
                             <li>Go 1.6</li>
                             <li>PHP 7.0</li>

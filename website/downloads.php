@@ -29,6 +29,7 @@
                     <li><a href="downloads/starterpackages/Halite-C%23-Starter-Package.zip">C# 6.0</a></li>
                     <li><a href="downloads/starterpackages/Halite-Rust-Starter-Package.zip">Rust 1.10</a></li>
                     <li><a href="downloads/starterpackages/Halite-Scala-Starter-Package.zip">Scala 2.10.4</a></li>
+                    <li><a href="downloads/starterpackages/Halite-Kotlin-Starter-Package.zip">Kotlin 1.0.6</a></li>
                     <li><a href="downloads/starterpackages/Halite-Ruby-Starter-Package.zip">Ruby 2.3.1</a></li>
                     <li><a href="downloads/starterpackages/Halite-Go-Starter-Package.zip">Go 1.6</a></li>
                     <li><a href="downloads/starterpackages/Halite-PHP-Starter-Package.zip">PHP 7.0</a></li>

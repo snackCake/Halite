@@ -35,7 +35,7 @@ if "error" in makerustout:
     isGood = False
 else:
     print('Rust starter package build succeeded.')
-# Do scala eventually.
+# Do Scala & Kotlin eventually.
 
 # Ensures that the environment can run a basic game where a bot wins. Confirm that the bot expected to win does indeed win.
 genlines = subprocess.Popen('../../environment/halite -d "10 10" -q "python3 ModBot.py" "python3 ModBot.py" -s 1001', stdout=subprocess.PIPE, shell = True).stdout.read().decode('utf-8').split('\n')

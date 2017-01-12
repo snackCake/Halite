@@ -54,6 +54,7 @@
                 <li>C# - <code>.cs</code></li>
                 <li>Rust - <code>.toml</code> (for your <code>Cargo.toml</code>) and <code>.rs</code> (for your Rust source)</li>
                 <li>Scala - <code>.scala</code></li>
+                <li>Kotlin - <code>.kt</code></li>
                 <li>Ruby - <code>.rb</code></li>
                 <li>Go - <code>.go</code></li>
                 <li>PHP - <code>.php</code></li>

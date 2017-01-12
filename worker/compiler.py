@@ -266,6 +266,7 @@ comp_args = {
     "Python"   : [["python3", "-c", PYTHON_EXT_COMPILER]],
     "Rust"      : [["cargo", "build", "--release", "-q"]],
     "Scala"     : [["scalac"]],
+    "Kotlin"    : [["kotlinc"]],
     }
 
 targets = {
@@ -428,6 +429,11 @@ languages = (
         'scala -J-Xmx'+ str(MEMORY_LIMIT) +'m -howtorun:object MyBot',
         ["*.scala, *.jar"],
         [(["*.java"], ExternalCompiler(comp_args["Java"][0])), (["*.scala"], ExternalCompiler(comp_args["Scala"][0]))]
+    ),
+    Language("Kotlin", BOT +".kt", "MyBot.kt",
+        'kotlin -J-Xmx'+ str(MEMORY_LIMIT) +'m -howtorun:object MyBot',
+        ["*.kt, *.jar"],
+        [(["*.kt"], ExternalCompiler(comp_args["Kotlin"][0]))]
     ),
     Language("Scheme", BOT +".ss", "MyBot.ss",
         "./MyBot",

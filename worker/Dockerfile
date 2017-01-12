@@ -4,6 +4,7 @@ RUN apt-get update
 
 RUN apt-get install -y sudo
 RUN apt-get install -y curl
+RUN apt-get install -y unzip
 
 RUN apt-get install -y libstdc++6
 RUN apt-get install -y gcc
@@ -15,6 +16,11 @@ RUN apt-get install -y python-software-properties
 RUN apt-get install -y software-properties-common
 RUN apt-get install -y openjdk-8-jdk
 RUN apt-get install -y scala
+RUN curl -L https://github.com/JetBrains/kotlin/releases/download/v1.0.6/kotlin-compiler-1.0.6.zip > kotlin-compiler-1.0.6.zip
+RUN unzip kotlin-compiler-1.0.6.zip -d /opt
+RUN ln -s /opt/kotlinc/bin/kotlin /usr/bin/kotlin
+RUN ln -s /opt/kotlinc/bin/kotlinc /usr/bin/kotlinc
+RUN rm -f kotlin-compiler-1.0.6.zip
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 RUN echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
@@ -22,7 +28,7 @@ RUN apt-get update
 RUN apt-get install -y mono-devel
 
 RUN apt-get install -y ruby
-RUN gem install bundler 
+RUN gem install bundler
 
 RUN apt-get install -y golang
 
@@ -41,5 +47,5 @@ RUN lein
 RUN apt-get install -y git
 
 RUN pip3 install numpy scipy scikit-learn pillow h5py
-RUN pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.12.0rc0-cp35-cp35m-linux_x86_64.whl 
+RUN pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.12.0rc0-cp35-cp35m-linux_x86_64.whl
 RUN pip3 install keras
