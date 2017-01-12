@@ -198,6 +198,14 @@ FakesAssemblies/
 #Java
 *.class
 
+#IntelliJ IDEA
+*.iml
+**/.idea/
+
+#Kotlin
+airesources/Kotlin/lib/
+airesources/Kotlin/out/
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
